@@ -10,8 +10,8 @@ $db = new Database($config['database']);
 $id = $_GET['id'] ?? 1;
 //dd($db);
 
-$notes = $db->consult("SELECT * FROM posts WHERE id = :id", ['id' => $id])->fetchAll();
+$note = $db->consult("SELECT * FROM posts WHERE id = :id", ['id' => $id])->fetch();
 
 //dd($notes);
 
-require 'views/notes.view.php';
+require 'views/note.view.php';
