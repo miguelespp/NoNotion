@@ -2,6 +2,9 @@
 
 require 'fn.php';
 require 'Database.php';
+require 'Response.php';
+// temp user id in session
+const session_user_id = 2;
 require 'router.php';
 //$config = require 'config.php';
 

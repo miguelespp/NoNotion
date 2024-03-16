@@ -1,8 +1,6 @@
 <?php require 'partials/header.php'; ?>
 
-<?php
-require 'fn.php';
-?>
+<?php //require 'fn.php'; ?>
 <?php require 'partials/nav.php'; ?>
 <?php ////$heading = 'Error 404. Not found.'; ?>
 <!--    --><?php ////require 'partials/banner.php'; ?>
