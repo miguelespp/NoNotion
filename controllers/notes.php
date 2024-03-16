@@ -8,7 +8,7 @@ $config = require 'config.php';
 $db = new Database($config['database']);
 //dd($db);
 
-$notes = $db->consult("SELECT * FROM posts WHERE user_id = 4")->fetchAll();
+$notes = $db->consult("SELECT * FROM posts WHERE  user_id = :user", ['user' => session_user_id])->findAll();
 
 //dd($notes);
 

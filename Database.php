@@ -4,7 +4,8 @@
 
 class Database
 {
-    public $connection;
+    public  $connection;
+    private  $statement;
     public function __construct(array $config = [])
     {
 
@@ -20,13 +21,32 @@ class Database
         }
     }
 
-    public function consult(string $query, array $params = [])
+    public function consult(string $query, array $params = []) : mixed
     {
 
-        $statement = $this->connection->prepare($query);
-        $statement->execute($params);
+        $this->statement = $this->connection->prepare($query);
+        $this->statement->execute($params);
 
-        return $statement;
+        return $this;
+    }
+
+    public function findAll()
+    {
+        return $this->statement->fetchAll();
+    }
+
+    public function find()
+    {
+        return $this->statement->fetch();
+    }
+
+    public function findOrFail()
+    {
+        $result = $this->statement->fetch();
+        if(!$result){
+            abort(Response::HTTP_FORBIDDEN);
+        }
+        return $result;
     }
 
 }
