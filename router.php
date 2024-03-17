@@ -22,6 +22,7 @@ $routes = [
     '/' => 'controllers/index',
     '/notes' => 'controllers/notes',
     '/note' => 'controllers/note',
+    '/note/create' => 'controllers/note-create',
     '/about' => 'controllers/about',
     '/contact' => 'controllers/contact'
 ];
