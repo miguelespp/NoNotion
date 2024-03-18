@@ -20,9 +20,9 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $routes = [
     '/' => 'controllers/index',
-    '/notes' => 'controllers/notes',
-    '/note' => 'controllers/note',
-    '/note/create' => 'controllers/note-create',
+    '/notes' => 'controllers/note/notes',
+    '/note' => 'controllers/note/note',
+    '/note/create' => 'controllers/note/note-create',
     '/about' => 'controllers/about',
     '/contact' => 'controllers/contact'
 ];
