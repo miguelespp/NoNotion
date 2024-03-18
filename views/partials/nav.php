@@ -79,9 +79,14 @@
     <div class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="/" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-            <a href="/controllers.php" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
-            <a href="/controllerstact.php" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contact</a>
+            <a href="/"
+               class=" <?= isURL('/') ? 'bg-gray-900 text-white' : 'text-gray-200';  ?>  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+            <a href="/notes"
+               class=" <?= isURL('/notes') ? 'bg-gray-900 text-white' : 'text-gray-200';  ?> hover:bg-gray-700 hover:text-white  rounded-md px-3 py-2 text-sm font-medium">Notes</a>
+            <a href="/about"
+               class=" <?= isURL('/about') ? 'bg-gray-900 text-white' : 'text-gray-200';  ?> hover:bg-gray-700 hover:text-white  rounded-md px-3 py-2 text-sm font-medium">About</a>
+            <a href="/contact"
+               class=" <?= isURL('/contact') ? 'bg-gray-900 text-white' : 'text-gray-200';  ?> text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
         </div>
         <div class="border-t border-gray-700 pb-3 pt-4">
             <div class="flex items-center px-5">

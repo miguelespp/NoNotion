@@ -24,4 +24,4 @@ auth($note['user_id'] === session_user_id);
 
 //dd($notes);
 
-require 'views/note.view.php';
+require 'views/note/show.view.php';

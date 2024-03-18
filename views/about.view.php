@@ -5,7 +5,7 @@
 
     <main>
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            Somos una empresa que se dedica a la venta de soluciones de software.
+            Este es una pequeña aplicacion cuya finalidad es la de practicar y aprender el uso de PHP y Tailwindcss.
         </div>
     </main>
 

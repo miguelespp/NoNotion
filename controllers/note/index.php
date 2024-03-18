@@ -12,5 +12,5 @@ $notes = $db->consult("SELECT * FROM posts WHERE  user_id = :user", ['user' => s
 
 //dd($notes);
 
-require 'views/notes.view.php';
+require 'views/note/index.view.php';
 

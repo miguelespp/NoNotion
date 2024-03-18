@@ -20,9 +20,9 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $routes = [
     '/' => 'controllers/index',
-    '/notes' => 'controllers/note/notes',
-    '/note' => 'controllers/note/note',
-    '/note/create' => 'controllers/note/note-create',
+    '/notes' => 'controllers/note/index',
+    '/note' => 'controllers/note/show',
+    '/note/create' => 'controllers/note/create',
     '/about' => 'controllers/about',
     '/contact' => 'controllers/contact'
 ];
@@ -30,7 +30,7 @@ $routes = [
 function abort(int $code)
 {
     http_response_code($code);
-    require "views/{$code}.php";
+    require "views/errors/{$code}.php";
     die();
 }
 
