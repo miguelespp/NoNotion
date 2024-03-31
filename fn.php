@@ -20,3 +20,14 @@ function auth(bool $condition)
     }
 }
 
+function base_path(string $path = '') : string
+{
+    return BASE_PATH . $path . '.php';
+}
+
+function view(string $path, array $data = []) : void
+{
+    extract($data);
+    require base_path( 'views/' . $path . '.view');
+}
+

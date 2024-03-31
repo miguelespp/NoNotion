@@ -1,8 +1,8 @@
 <?php
 
-$heading = 'Dashboard';
 
 //require 'fn.php';
 
 
-require 'views/index.view.php';
+view('index', ['heading' => 'Dashboard']);
+//require BASE_PATH . 'views/index.view.php';

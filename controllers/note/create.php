@@ -2,13 +2,15 @@
 
 $heading = 'Create a note';
 
-$config = require 'config.php';
+require base_path('Validator');
+$config = require base_path('config');
 //dd($id);
 
 $db = new Database($config['database']);
 
+$errors = [];
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $errors = [];
+
 //    $validate = new Validator();
 //    switch ($_POST['body']) {
 //        case empty($_POST['body']):
@@ -35,4 +37,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
 }
-require 'views/note/create.view.php';
+
+view('note/create', [
+    'heading' => 'Make a note :)',
+    'errors' => $errors ?? []
+]);
