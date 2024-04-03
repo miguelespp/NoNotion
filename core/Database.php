@@ -1,18 +1,22 @@
 <?php
 
 
+namespace core;
+
+use PDO, PDOException;
 
 class Database
 {
-    public  $connection;
-    private  $statement;
+    public PDO $connection;
+    private $statement;
+
     public function __construct(array $config = [])
     {
 
         $dsn = "mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}";
 
         try {
-            $this->connection = new PDO($dsn, $config['user'], $config['password'],[
+            $this->connection = new PDO($dsn, $config['user'], $config['password'], [
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
 //    echo "Conexión exitosa!";
@@ -21,7 +25,7 @@ class Database
         }
     }
 
-    public function consult(string $query, array $params = []) : mixed
+    public function consult(string $query, array $params = []): mixed
     {
 
         $this->statement = $this->connection->prepare($query);
@@ -43,7 +47,7 @@ class Database
     public function findOrFail()
     {
         $result = $this->statement->fetch();
-        if(!$result){
+        if (!$result) {
             abort(Response::HTTP_FORBIDDEN);
         }
         return $result;

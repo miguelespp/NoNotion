@@ -27,10 +27,10 @@ $routes = [
     '/contact' => 'controllers/contact'
 ];
 
-function abort(int $code)
+function abort(int $code) : void
 {
     http_response_code($code);
-    require "views/errors/{$code}.php";
+    require base_path("views/errors/{$code}");
     die();
 }
 
@@ -39,7 +39,7 @@ function routerToController($uri, $routes)
     if (!array_key_exists($uri, $routes)) {
         abort(404);
     } else {
-        require "{$routes[$uri]}.php";
+        require base_path($routes[$uri]);
     }
 }
 

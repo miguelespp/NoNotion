@@ -1,5 +1,6 @@
 <?php
 
+namespace core;
 class Response
 {
     const int HTTP_OK = 200;

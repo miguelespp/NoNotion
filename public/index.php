@@ -2,14 +2,19 @@
 const BASE_PATH = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
 
-require BASE_PATH . 'fn.php';
+require BASE_PATH . 'core/fn.php';
 
-require base_path('Database');
-require base_path('Response');
+spl_autoload_register(function ($class) {
+//    dd($class);
+    require base_path($class );
+});
+
+//require base_path('Database');
+//require base_path('Response');
 
 // temp user id in session
 const session_user_id = 2;
-require base_path('router');
+require base_path('core/router');
 //$config = require 'config.php';
 
 // conection to database mysql - Ordinary
