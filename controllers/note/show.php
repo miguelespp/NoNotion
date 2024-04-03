@@ -2,7 +2,7 @@
 
 $heading = 'Note';
 
-$config = require 'config.php';
+$config = require base_path('config');
 //dd($id);
 
 $db = new Database($config['database']);
@@ -12,6 +12,7 @@ $id = $_GET['id'] ?? 1;
 
 
 $note = $db->consult("SELECT * FROM posts WHERE user_id = :user and id = :id", ['user' => session_user_id, 'id' => $id])->findOrFail();
+//dd($note);
 
 //if(!$note){
 //    abort(Response::HTTP_NOT_FOUND);
@@ -24,4 +25,7 @@ auth($note['user_id'] === session_user_id);
 
 //dd($notes);
 
-require 'views/note/show.view.php';
+view('note/show', [
+    'heading' => 'Note',
+    'note' => $note
+]);

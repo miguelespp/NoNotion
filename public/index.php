@@ -1,12 +1,15 @@
 <?php
+const BASE_PATH = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
-require 'fn.php';
-require 'Database.php';
-require 'Response.php';
-require 'Validator.php';
+
+require BASE_PATH . 'fn.php';
+
+require base_path('Database');
+require base_path('Response');
+
 // temp user id in session
 const session_user_id = 2;
-require 'router.php';
+require base_path('router');
 //$config = require 'config.php';
 
 // conection to database mysql - Ordinary
