@@ -1,7 +1,5 @@
-<?php require 'partials/header.php'; ?>
-
-<?php //require 'fn.php'; ?>
-<?php require 'partials/nav.php'; ?>
+<?php require base_path('views/partials/header'); ?>
+<?php require base_path('views/partials/nav'); ?>
 <?php ////$heading = 'Error 404. Not found.'; ?>
 <!--    --><?php ////require 'partials/banner.php'; ?>
 <!---->
@@ -14,4 +12,4 @@
     </div>
 </main>
 <!---->
-<?php require 'partials/footer.php'; ?>
+<?php require base_path('views/partials/footer'); ?>

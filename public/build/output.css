@@ -613,6 +613,10 @@ video {
   margin-left: 1rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -663,6 +667,10 @@ video {
 
 .h-16 {
   height: 4rem;
+}
+
+.h-56 {
+  height: 14rem;
 }
 
 .h-6 {
@@ -842,6 +850,11 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
@@ -855,6 +868,11 @@ video {
 .bg-indigo-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -909,6 +927,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -920,6 +943,18 @@ video {
 
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .pt-2 {
@@ -977,11 +1012,6 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
-.text-blue-700 {
-  --tw-text-opacity: 1;
-  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
 .text-gray-200 {
@@ -1123,11 +1153,6 @@ video {
   background-color: rgb(253 230 138 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-amber-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 211 77 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
@@ -1143,6 +1168,11 @@ video {
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-red-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1150,6 +1180,10 @@ video {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+
+.focus\:accent-yellow-600:focus {
+  accent-color: #ca8a04;
 }
 
 .focus\:outline-none:focus {
@@ -1167,9 +1201,9 @@ video {
   --tw-ring-inset: inset;
 }
 
-.focus\:ring-indigo-600:focus {
+.focus\:ring-blue-400:focus {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(79 70 229 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(96 165 250 / var(--tw-ring-opacity));
 }
 
 .focus\:ring-white:focus {

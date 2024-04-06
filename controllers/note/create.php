@@ -13,7 +13,7 @@ $db = new Database($config['database']);
 
 $errors = [];
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
+    auth($_POST['user_id'] == session_user_id);
 //    $validate = new Validator();
 //    switch ($_POST['body']) {
 //        case empty($_POST['body']):
@@ -34,8 +34,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (empty($errors)) {
         $db->consult("INSERT INTO posts (body, user_id) VALUES (:body, :user)", [
             'body' => $_POST['body'],
-            'user' => session_user_id
+            'user' => $_POST['user_id']
         ]);
+//        dd($_SERVER['REQUEST_URI']);
+        header("Location: " . '/notes');
+        exit;
     }
 
 
