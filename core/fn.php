@@ -33,3 +33,10 @@ function view(string $path, array $data = []) : void
     require base_path( 'views/' . $path . '.view');
 }
 
+function abort(int $code = Response::HTTP_NOT_FOUND) : void
+{
+    http_response_code($code);
+    require base_path("views/errors/{$code}");
+    die();
+}
+

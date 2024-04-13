@@ -11,6 +11,8 @@
                         <div class="p-6 sm:px-20 bg-white border-b border-gray-200 flex justify-between items-center">
                             <a id="papu" href="/note?id=<?= $note['id'] ?> " class=" text-l font-bold text-gray-900 hover:bg-amber-200 hover:underline"><?= htmlspecialchars($note['body']) ?></a>
                             <form class="end" method="post">
+
+                                <input type="hidden" name="__request_method" value="DELETE">
                                 <input type="hidden" name="user_id" value="<?= $note['user_id'] ?>">
                                 <input type="hidden" name="note_id" value="<?= $note['id']?>">
                                 <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">

@@ -19,9 +19,8 @@ class Database
             $this->connection = new PDO($dsn, $config['user'], $config['password'], [
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
-//    echo "Conexión exitosa!";
         } catch (PDOException $e) {
-            die("No se pudo conectar con el servidor: " . $e->getMessage());
+            die("Can't connect to server :  " . $e->getMessage());
         }
     }
 

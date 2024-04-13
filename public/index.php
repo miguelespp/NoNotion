@@ -1,4 +1,7 @@
 <?php
+
+use core\Route;
+
 const BASE_PATH = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
 
@@ -13,8 +16,15 @@ spl_autoload_register(function ($class) {
 //require base_path('Response');
 
 // temp user id in session
-const session_user_id = 2;
+const session_user_id = 3;
 require base_path('core/router');
+
+$Router = new Route();
+
+$Router();
+
+//dd($router->getRoutes());
+//$router->run();
 //$config = require 'config.php';
 
 // conection to database mysql - Ordinary

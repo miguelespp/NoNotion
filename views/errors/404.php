@@ -10,6 +10,9 @@
             <a href="/" class="text-blue underline">Go back home</a>
         </p>
     </div>
+    <div>
+        <img src="https://http.cat/404" alt="no image">
+    </div>
 </main>
 <!---->
 <?php require base_path('views/partials/footer'); ?>

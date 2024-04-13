@@ -3,7 +3,6 @@
 use core\Database;
 use core\Validator;
 
-$heading = 'Create a note';
 
 //require base_path('Validator');
 $config = require base_path('config');

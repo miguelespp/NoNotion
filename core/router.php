@@ -1,6 +1,6 @@
 <?php
 
-
+use core\Route;
 // Primera forma(Tradicional)
 //$uri = $_SERVER['REQUEST_URI'];
 //
@@ -16,7 +16,37 @@
 //    die();
 //}
 
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+//$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+//dd($_SERVER);
+Route::get('/', function (){
+    require base_path('controllers/index');
+})->name('home');
+
+Route::get('/about', function (){
+    require base_path('controllers/about');
+})->name('about');
+
+Route::get('/contact', function (){
+    require base_path('controllers/contact');
+})->name('contact');
+
+Route::delete('/notes', function (){
+    require base_path('controllers/note/index');
+})->name('notes');
+
+Route::post('/note/create', function (){
+    require base_path('controllers/note/create');
+})->name('note.create');
+
+Route::get('/note', function (){
+    require  base_path('controllers/note/show');
+})->name('note.show');
+
+//$router  = new Route();
+//dd($router->getRoutes());
+//var_dump($routes);
+
+/*
 
 $routes = [
     '/' => 'controllers/index',
@@ -27,7 +57,7 @@ $routes = [
     '/contact' => 'controllers/contact'
 ];
 
-function abort(int $code) : void
+ function abort(int $code) : void
 {
     http_response_code($code);
     require base_path("views/errors/{$code}");
@@ -43,8 +73,8 @@ function routerToController($uri, $routes)
     }
 }
 
-routerToController($uri, $routes);
+//routerToController($uri, $routes);
 
 
-
+*/
 
