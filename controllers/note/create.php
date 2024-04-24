@@ -1,17 +1,10 @@
 <?php
 
-use core\Database;
-use core\Validator;
 
 
 //require base_path('Validator');
-$config = require base_path('config');
-//dd($id);
 
-$db = new Database($config['database']);
-
-$errors = [];
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+/*if($_SERVER['REQUEST_METHOD'] === 'POST'){
     auth($_POST['user_id'] == session_user_id);
 //    $validate = new Validator();
 //    switch ($_POST['body']) {
@@ -41,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 
 
-}
+}*/
 
 view('note/create', [
     'heading' => 'Make a note :)',

@@ -30,13 +30,23 @@ Route::get('/contact', function (){
     require base_path('controllers/contact');
 })->name('contact');
 
-Route::delete('/notes', function (){
+Route::get('/notes', function (){
     require base_path('controllers/note/index');
 })->name('notes');
 
-Route::post('/note/create', function (){
+Route::delete('/notes', function (){
+    require base_path('controllers/note/destroy');
+})->name('note.destroy');
+
+
+Route::get('/note/create', function (){
     require base_path('controllers/note/create');
 })->name('note.create');
+
+Route::post('/notes', function (){
+    require base_path('controllers/note/store');
+})->name('note.store');
+
 
 Route::get('/note', function (){
     require  base_path('controllers/note/show');

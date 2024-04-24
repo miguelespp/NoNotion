@@ -1,7 +1,7 @@
 <?php
 
 
-//require 'fn.php';
+//dd(__FILE__);
 
 
 view('index', ['heading' => 'Dashboard']);

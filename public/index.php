@@ -6,6 +6,7 @@ const BASE_PATH = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 
 
 require BASE_PATH . 'core/fn.php';
+//dd(BASE_PATH);
 
 spl_autoload_register(function ($class) {
 //    dd($class);
@@ -20,7 +21,8 @@ const session_user_id = 3;
 require base_path('core/router');
 
 $Router = new Route();
-
+//dd($Router->getRoutes());
+//dd(__FILE__);
 $Router();
 
 //dd($router->getRoutes());

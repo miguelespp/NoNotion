@@ -9,7 +9,7 @@ $config = require base_path('config');
 $db = new Database($config['database']);
 //dd($db);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+/*if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     auth($_POST['user_id'] == session_user_id);
 //    dd($_POST);
     $db->consult("DELETE FROM posts WHERE id = :id and user_id = :user_id", [
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
     header("Location: " . $_SERVER['REQUEST_URI']);
     exit;
-}
+}*/
 
 $notes = $db->consult("SELECT * FROM posts WHERE  user_id = :user ORDER BY id DESC", ['user' => session_user_id])->findAll();
 

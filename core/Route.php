@@ -10,15 +10,26 @@ class Route
 
     }
 
+    /**
+     * funcion para verificar el almacenamiento de rutas
+     * @return array
+     */
+    public function getRoutes(): array
+    {
+        return self::$routes;
+    }
+
     public function __invoke()
     {
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $method = $_POST['method'] ?? $_SERVER['REQUEST_METHOD'];
 //        dd($method);
-
+        $results = [];
         foreach (self::$routes as $route) {
 //            dd($method);
-            if ($route['uri'] === $uri ){
+//            dd($route['method']);
+            $results[] =[[ $route['method'] . $method =>  $route['method'] === $method  ]];
+            if ($route['uri'] === $uri && $route['method'] === $method ){
 //                dd($route['method']);
 //                var_dump($route['uri']);
                 if (is_callable($route['param'])) {
@@ -29,6 +40,7 @@ class Route
                 return;
             }
         }
+//        dd($results);
         abort();
     }
     private static function add(string $uri, array|string|callable|null $param, string $method): void
