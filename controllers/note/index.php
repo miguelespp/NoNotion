@@ -1,12 +1,9 @@
 <?php
 
 
-use core\Database;
+use core\App;
 
-$config = require base_path('config');
-//dd($id);
-
-$db = new Database($config['database']);
+$db = App::resolve('core\Database');
 //dd($db);
 
 /*if ($_SERVER['REQUEST_METHOD'] === 'POST') {

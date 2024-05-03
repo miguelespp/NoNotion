@@ -1,11 +1,11 @@
 <?php
 
-use core\Database;
+//$config = require base_path('config');
+//$db = new Database($config['database']);
+use core\App;
 
-$config = require base_path('config');
-//dd($id);
+$db = App::resolve('core\Database');
 
-$db = new Database($config['database']);
 //dd($_POST);
 $notes = $db->consult("SELECT * FROM posts WHERE  user_id = :user ORDER BY id DESC", [
     'user' => session_user_id

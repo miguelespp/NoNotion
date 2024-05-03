@@ -13,6 +13,7 @@ spl_autoload_register(function ($class) {
     require base_path($class );
 });
 
+require base_path('bootstrap');
 //require base_path('Database');
 //require base_path('Response');
 
